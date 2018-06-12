@@ -296,7 +296,6 @@ public class ScheduleDAO_jdbc {
 			}
 		} catch (Exception e) {e.printStackTrace();} 
 		finally {JDBCutil.close(con, ps,rs);
-			System.out.println(list);
 		}
 		return temp_schedule;
 	}
@@ -344,7 +343,6 @@ public class ScheduleDAO_jdbc {
 
 		dao.DropSchedule();
 		dao.CreatSchedule();
-		dao.CheckScheduleTable();
 	    
 	    try {
 	        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -357,12 +355,10 @@ public class ScheduleDAO_jdbc {
 	        long diffDays = diffMilisecond / (24 * 60 * 60 * 1000);
 	        int difday=(int)diffDays;
 	 
-	        sb.append("시작날짜 : ");
 	        sb.append(start);
-	        sb.append("  종료날짜 : ");
+	        sb.append("부터 ");
 	        sb.append(end);
-	        sb.append("   날짜 차이 = ");
-	        sb.append(difday);
+	        sb.append("까지의 식단 생성 중 ...");
 	        
 	        out=sb.toString();
 	        

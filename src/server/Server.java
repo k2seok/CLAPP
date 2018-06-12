@@ -1,4 +1,4 @@
-
+package server;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
@@ -39,7 +39,7 @@ public class Server {
 			init();
 
 			System.out.printf("making QRcode");
-			String path = "C:\\1004";
+			String path = "C:\\file_server\\backup\\CLapp\\QRcode";
 			String fileName = new SimpleDateFormat("yyMMddhhmmss").format(new Date(System.currentTimeMillis()));
 			String url = ip.getHostAddress() + ":" + port;
 			makeQRCode(path, fileName + ".png", url);

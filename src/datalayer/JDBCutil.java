@@ -1,5 +1,6 @@
 package datalayer;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,12 +21,9 @@ public class JDBCutil {
 		
 		try {
 			Properties p = new Properties();
-			p.load(new FileInputStream("C:\\1004\\db_info.txt"));
-			
-			
-			Class.forName(p.getProperty("driver"));
-			con = DriverManager.getConnection(p.getProperty("url"),p.getProperty("user"), p.getProperty("pw"));
-
+	         
+	         Class.forName("oracle.jdbc.driver.OracleDriver");
+	         con = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe","scott", "tiger");
 			
 			
 			
